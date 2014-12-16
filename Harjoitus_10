@@ -1,0 +1,31 @@
+/*	Jani Kähkönen/H9575
+Harjoitus_10	20.9.2014	*/
+
+#include <iostream>
+using namespace std;
+
+void Laske(double p, double n, double yht, double pp, double pn, double py)
+{
+	yht += n + p;
+	pp += p / yht * 100;
+	pn += n / yht * 100;
+	py += pp + pn;
+
+	cout << "Positiiviset:	" << p << " Kpl " << pp << "%" << endl;
+	cout << "Negatiiviset:	" << n << " Kpl " << pn << "%" << endl;
+	cout << "Yhteensa:	" << yht << " Kpl " << py << "%" << endl;
+}
+
+int main()
+{
+	double luku=1,p=0,n=0,yht=0;
+	double pp=0, pn=0, py=0;
+	cout << "Syota positiivisia ja negatiivisia lukuja, lopeta syottamalla 0\n";
+	for (int i = 0;luku != 0;i++)
+	{
+		cout << "Anna luku: ";cin >> luku;
+		if (luku > 0){ p++; }
+		if (luku < 0){ n++; }
+	}
+	Laske(p,n,yht,pp,pn,py);
+}
